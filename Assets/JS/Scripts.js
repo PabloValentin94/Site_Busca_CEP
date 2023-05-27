@@ -5,7 +5,7 @@ function Associar_Pagina_Externa(indice_pagina)
     {
 
         case 0:
-            document.getElementById("frame_pagina_externa").src = "Index.html";
+            document.getElementById("frame_pagina_externa").src = "";
         break;
 
         case 1:
@@ -32,12 +32,14 @@ function Associar_Pagina_Externa(indice_pagina)
 
 }
 
+// Fonte de Pesquisa (Integração com uma API): https://www.youtube.com/watch?v=UDoCiC_e908
+
 function GetEnderecoByCEP(cep)
 {
 
-    const elemento = document.getElementById("teste");
+    // Versão inicial:
 
-    endereco = fetch("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep)
+    /*fetch("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep)
     .then(resposta_http => { return resposta_http.json() })
     .then(endereco_requisitado => {
 
@@ -55,8 +57,17 @@ function GetEnderecoByCEP(cep)
 
         const pais = "Brasil";
 
-        elemento.innerText = logradouro + " " + tipo + " " + descricao_bairro
-        + " " + descricao_cidade + " " + codigo_ibge_cidade + " " + estado + " " + pais;
+    });*/
+
+    // Versão modificada para um melhor entendimento:
+
+    var conexao_api = fetch("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep);
+
+    var resposta_http = conexao_api.then(resposta => { return resposta.json() });
+    
+    resposta_http.then(endereco => {
+
+        document.getElementById("teste").innerText = endereco.descricao;
 
     });
 
@@ -65,19 +76,16 @@ function GetEnderecoByCEP(cep)
 function GetCidadesByUF(uf)
 {
 
-    const elemento = document.getElementById("teste");
-
     fetch("https://cep.metoda.com.br/cidade/by-uf?uf=" + uf)
     .then(resposta_http => { return resposta_http.json() })
-    .then(lista_cidades_requisitadas => {
+    .then(lista_cidades => {
 
-        //console.log(lista_cidades_requisitadas);
+        for(i = 0; i < lista_cidades.length; i++)
+        {
 
-        var cidade = lista_cidades_requisitadas[0].descricao;
+            console.log(lista_cidades[i].descricao);
 
-        elemento.innerText = cidade;
-
-        //console.log(lista_cidades_requisitadas.length);
+        }
 
     })
 
