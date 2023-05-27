@@ -15,7 +15,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
 
 }
 
@@ -40,13 +39,13 @@ body {
     justify-content: flex-start;
     background-color: #2F2F36;
     color: #FF0000;
-    padding: 1%;
+    padding: 15px;
 
 }
 
 #logo_menu_lateral {
 
-    height: 20%;
+    height: 25%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -55,9 +54,41 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: #FFFFFF;
-    border: 3px solid #FFFF00;
+    border: 3px solid #FF0000;
     border-radius: 5px;
     margin-bottom: 15px;
+
+}
+
+#botoes_menu_lateral {
+
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+    background-color: transparent;
+    padding: 3%;
+    overflow-y: auto;
+
+}
+
+.botao_menu_lateral {
+
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 5px solid #FF0000;
+    color: #FFFFFF;
+    font-size: medium;
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+    padding: 15px;
 
 }
 
@@ -70,7 +101,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
-    padding: 1%;
+    padding: 15px;
 
 }
 

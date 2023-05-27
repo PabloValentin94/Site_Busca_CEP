@@ -8,13 +8,51 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <script type="text/javascript" src="Assets/JS/Bairros_por_Cidade_Scripts.js"></script>
+
         <title> Descubra os bairros da sua cidade </title>
 
     </head>
 
+    <script>
+
+        function getEnderecoByCEP(cep)
+        {
+
+            const elemento = document.getElementById("teste");
+
+            fetch("https://cep.metoda.com.br/endereco/by-cep?cep=" + cep)
+            .then(resposta => { return resposta.json() })
+            .then(endereco => {
+
+                var logradouro = endereco.descricao;
+
+                var tipo = endereco.tipo;
+
+                var descricao_bairro = endereco.descricao_bairro;
+
+                var descricao_cidade = endereco.descricao_cidade;
+
+                var codigo_ibge_cidade = endereco.codigo_cidade_ibge;
+
+                var estado = endereco.UF;
+
+                const pais = "Brasil";
+
+                elemento.innerText = logradouro + " " + tipo + " " + descricao_bairro
+                + " " + descricao_cidade + " " + estado + " " + pais;
+
+            });
+
+        }
+
+    </script>
+
     <body>
 
-        <p>Teste</p>
+        <p id="teste"> Teste </p>
+
+        <button onclick="getEnderecoByCEP(17210640)"></button>
         
     </body>
 

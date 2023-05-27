@@ -16,6 +16,44 @@
 
     </head>
 
+    <script>
+
+        function Associar_Pagina_Externa(indice_pagina)
+        {
+
+            switch(indice_pagina)
+            {
+
+                case 0:
+                    document.getElementById("frame_pagina_externa").src = "";
+                break;
+
+                case 1:
+                    document.getElementById("frame_pagina_externa").src = "";
+                break;
+
+                case 2:
+                    document.getElementById("frame_pagina_externa").src = "";
+                break;
+
+                case 3:
+                    document.getElementById("frame_pagina_externa").src = "";
+                break;
+
+                case 4:
+                    document.getElementById("frame_pagina_externa").src = "Bairros_por_Cidade.html";
+                break;
+
+                case 5:
+                    document.getElementById("frame_pagina_externa").src = "";
+                break;
+
+            }
+
+        }
+
+    </script>
+
     <body>
 
         <div id="container">
@@ -25,6 +63,22 @@
                 <div id="logo_menu_lateral"></div>
 
                 <hr size="2" width="100%">
+
+                <div id="botoes_menu_lateral">
+
+                    <button class="botao_menu_lateral" onclick="Associar_Pagina_Externa(0)"> Início </button>
+
+                    <button class="botao_menu_lateral" onclick="Associar_Pagina_Externa(1)"> Seu endereço </button>
+
+                    <button class="botao_menu_lateral" onclick="Associar_Pagina_Externa(2)"> As cidades do seu estado </button>
+
+                    <button class="botao_menu_lateral" onclick="Associar_Pagina_Externa(3)"> Os ceps presentes no seu logradouro </button>
+
+                    <button class="botao_menu_lateral" onclick="Associar_Pagina_Externa(4)"> Os bairros da sua cidade </button>
+
+                    <button class="botao_menu_lateral" onclick="Associar_Pagina_Externa(5)"> Os logradouros presentes no seu bairro </button>
+
+                </div>
 
             </div>
 
