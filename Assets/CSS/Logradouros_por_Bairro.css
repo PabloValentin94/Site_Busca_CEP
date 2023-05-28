@@ -43,7 +43,7 @@ body {
 #titulos_selecoes label {
 
     font-size: 25px;
-    width: 45%;
+    width: 30%;
     text-align: center;
 
 }
@@ -51,13 +51,13 @@ body {
 #selecoes select {
 
     height: 100%;
-    width: 45%;
+    width: 30%;
     font-size: 20px;
     border-radius: 10px;
 
 }
 
-#tabela_bairros {
+#tabela_logradouros {
 
     height: 77.5%;
     width: 90%;
@@ -71,7 +71,7 @@ body {
 
 }
 
-#tabela_bairros p {
+#tabela_logradouros p {
 
     height: 5%;
     width: 100%;

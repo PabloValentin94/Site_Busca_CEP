@@ -8,6 +8,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="icon" type="image/x-icon" href="Assets/Images/Favicon.ico">
+
+        <link rel="stylesheet" type="text/css" href="Assets/CSS/CEPs_por_Logradouro.css">
+
         <script type="text/javascript" src="Assets/JS/Scripts.js"></script>
 
         <title> Descubra os ceps presentes no seu logradouro </title>
@@ -16,9 +20,35 @@
 
     <body>
 
-        <p id="teste"> Teste </p>
+        <div id="container">
 
-        <button onclick=""></button>
+            <div id="titulo_inscricao_logradouro">
+
+                <label for="input_logradouro"> Digite um Logradouro: </label>
+
+            </div>
+
+            <div id="inscricao_logradouro">
+
+                <input type="text" name="input_logradouro" id="input_logradouro">
+
+            </div>
+
+            <div id="tabela_ceps">
+
+                
+
+            </div>
+
+            <div id="botoes">
+
+                <button id="botao_limpar" onclick="document.getElementById('tabela_ceps').innerHTML = ''"> Limpar Tabela </button>
+
+                <button id="botao_procurar" onclick="GetCEPsByLogradouro()"> Procurar CEPs </button>
+
+            </div>
+
+        </div>
         
     </body>
 

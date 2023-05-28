@@ -8,6 +8,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="icon" type="image/x-icon" href="Assets/Images/Favicon.ico">
+
+        <link rel="stylesheet" type="text/css" href="Assets/CSS/Endereco_pelo_CEP.css">
+
         <script type="text/javascript" src="Assets/JS/Scripts.js"></script>
 
         <title> Descubra seu endereço </title>
@@ -16,9 +20,54 @@
 
     <body>
 
-        <p id="teste"> Teste </p>
+        <div id="container">
 
-        <button onclick="GetEnderecoByCEP(17212646)"></button>
+            <div id="titulo_inscricao_cep">
+
+                <label for="input_cep"> Digite um CEP: </label>
+
+            </div>
+
+            <div id="inscricao_cep">
+
+                <input type="text" name="input_cep" id="input_cep">
+
+            </div>
+
+            <div id="dados_endereco">
+
+                <p class="titulo_dados"> Logradouro: </p>
+                <p class="dado" id="dado_logradouro"></p>
+
+                <p class="titulo_dados"> Tipo: </p>
+                <p class="dado" id="dado_tipo"></p>
+
+                <p class="titulo_dados"> Bairro: </p>
+                <p class="dado" id="dado_bairro"></p>
+
+                <p class="titulo_dados"> Cidade: </p>
+                <p class="dado" id="dado_cidade"></p>
+
+                <p class="titulo_dados"> Código Municipal - IBGE: </p>
+                <p class="dado" id="dado_codigo_ibge_cidade"></p>
+
+                <p class="titulo_dados"> Unidade Federal (Estado): </p>
+                <p class="dado" id="dado_estado"></p>
+
+                <p class="titulo_dados"> País: </p>
+                <p class="dado" id="dado_pais"></p>
+
+            </div>
+
+            <div id="botoes">
+
+                <button id="botao_limpar" onclick="GetEnderecoByCEP(0)"> Limpar Dados </button>
+
+                <button id="botao_procurar" onclick="GetEnderecoByCEP(1)"> Procurar Endereco </button>
+
+            </div>
+
+        </div>
         
     </body>
 

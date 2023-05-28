@@ -8,6 +8,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="icon" type="image/x-icon" href="Assets/Images/Favicon.ico">
+
+        <link rel="stylesheet" type="text/css" href="Assets/CSS/Bairros_por_Cidade.css">
+
         <script type="text/javascript" src="Assets/JS/Scripts.js"></script>
 
         <title> Descubra os bairros da sua cidade </title>
@@ -16,9 +20,74 @@
 
     <body>
 
-        <p id="teste"> Teste </p>
+        <div id="container">
 
-        <button onclick=""></button>
+            <div id="titulos_selecoes">
+
+                <label for="select_estado"> Escolha um estado: </label>
+
+                <label for="select_cidade"> Escolha uma cidade: </label>
+
+            </div>
+
+            <div id="selecoes">
+
+                <select name="select_estado" id="select_estado" onchange="MudancaSelectEstado()">
+
+                    <option> Selecione </option>
+                    <option value="AC"> Acre </option>
+                    <option value="AL"> Alagoas </option>
+                    <option value="AP"> Amapá </option>
+                    <option value="AM"> Amazonas </option>
+                    <option value="BA"> Bahia </option>
+                    <option value="CE"> Ceará </option>
+                    <option value="DF"> Distrito Federal </option>
+                    <option value="ES"> Espírito Santo </option>
+                    <option value="GO"> Goiás </option>
+                    <option value="MA"> Maranhão </option>
+                    <option value="MT"> Mato Grosso </option>
+                    <option value="MS"> Mato Grosso do Sul </option>
+                    <option value="MG"> Minas Gerais </option>
+                    <option value="PA"> Pará </option>
+                    <option value="PB"> Paraíba </option>
+                    <option value="PR"> Paraná </option>
+                    <option value="PE"> Pernambuco </option>
+                    <option value="PI"> Piauí </option>
+                    <option value="RJ"> Rio de Janeiro </option>
+                    <option value="RN"> Rio Grande do Norte </option>
+                    <option value="RS"> Rio Grande do Sul </option>
+                    <option value="RO"> Rondônia </option>
+                    <option value="RR"> Roraima </option>
+                    <option value="SC"> Santa Catarina </option>
+                    <option value="SP"> São Paulo </option>
+                    <option value="SE"> Sergipe </option>
+                    <option value="TO"> Tocantins </option>
+
+                </select>
+
+                <select name="select_cidade" id="select_cidade">
+
+                    <option> Selecione </option>
+
+                </select>
+
+            </div>
+
+            <div id="tabela_bairros">
+
+                
+
+            </div>
+
+            <div id="botoes">
+
+                <button id="botao_limpar" onclick="document.getElementById('tabela_bairros').innerHTML = ''"> Limpar Tabela </button>
+
+                <button id="botao_procurar" onclick="GetBairrosByIDCidade()"> Procurar Bairros </button>
+
+            </div>
+
+        </div>
         
     </body>
 
