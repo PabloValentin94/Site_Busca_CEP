@@ -49,6 +49,8 @@ function GetEnderecoByCEP(condicao_pesquisar_limpar)
 
         case 0:
 
+            document.getElementById("input_cep").value = "";
+
             document.getElementById("dado_logradouro").innerText = "";
 
             document.getElementById("dado_tipo").innerText = "";
@@ -103,19 +105,24 @@ function GetEnderecoByCEP(condicao_pesquisar_limpar)
 
                 //console.log(endereco);
 
-                document.getElementById("dado_logradouro").innerText = endereco.descricao;
+                if(typeof endereco.CEP !== "undefined")
+                {
 
-                document.getElementById("dado_tipo").innerText = endereco.tipo;
+                    document.getElementById("dado_logradouro").innerText = endereco.descricao;
 
-                document.getElementById("dado_bairro").innerText = endereco.descricao_bairro;
+                    document.getElementById("dado_tipo").innerText = endereco.tipo;
 
-                document.getElementById("dado_cidade").innerText = endereco.descricao_cidade;
+                    document.getElementById("dado_bairro").innerText = endereco.descricao_bairro;
 
-                document.getElementById("dado_codigo_ibge_cidade").innerText = endereco.codigo_cidade_ibge;
+                    document.getElementById("dado_cidade").innerText = endereco.descricao_cidade;
 
-                document.getElementById("dado_estado").innerText = endereco.UF;
-                
-                document.getElementById("dado_pais").innerText = "Brasil";
+                    document.getElementById("dado_codigo_ibge_cidade").innerText = endereco.codigo_cidade_ibge;
+
+                    document.getElementById("dado_estado").innerText = endereco.UF;
+                    
+                    document.getElementById("dado_pais").innerText = "Brasil";
+
+                }
 
             });
 
@@ -173,40 +180,57 @@ function GetCidadesByUF()
 
 }
 
-function GetCEPsByLogradouro()
+function GetCEPsByLogradouro(condicao_pesquisar_limpar)
 {
 
-    //console.clear();
+    switch(condicao_pesquisar_limpar)
+    {
 
-    document.getElementById("tabela_ceps").innerHTML = "";
+        case 0:
 
-    const logradouro = document.getElementById("input_logradouro").value;
+            document.getElementById("input_logradouro").value = "";
 
-    requisicao_api = fetch(host + "/cep/by-logradouro?logradouro=" + logradouro);
+            document.getElementById("tabela_ceps").innerHTML = "";
 
-    resposta_http = requisicao_api.then(resposta => { return resposta.json() });
+        break;
 
-    resposta_http.then(lista_ceps => {
+        case 1:
 
-        for(i = 0; i < lista_ceps.length; i++)
-        {
+            //console.clear();
 
-            //console.log(lista_ceps[i]);
+            document.getElementById("tabela_ceps").innerHTML = "";
 
-            if(lista_ceps[i].CEP != "")
-            {
+            const logradouro = document.getElementById("input_logradouro").value;
 
-                const cep_formatado = lista_ceps[i].CEP[0] + lista_ceps[i].CEP[1] + "."
-                + lista_ceps[i].CEP[2] + lista_ceps[i].CEP[3] + lista_ceps[i].CEP[4] + "-"
-                + lista_ceps[i].CEP[5] + lista_ceps[i].CEP[6] + lista_ceps[i].CEP[7];
+            requisicao_api = fetch(host + "/cep/by-logradouro?logradouro=" + logradouro);
 
-                document.getElementById("tabela_ceps").innerHTML += "<p>" + cep_formatado + "</p>";
+            resposta_http = requisicao_api.then(resposta => { return resposta.json() });
 
-            }
+            resposta_http.then(lista_ceps => {
 
-        }
+                for(i = 0; i < lista_ceps.length; i++)
+                {
 
-    });
+                    //console.log(lista_ceps[i]);
+
+                    if(lista_ceps[i].CEP != "")
+                    {
+
+                        const cep_formatado = lista_ceps[i].CEP[0] + lista_ceps[i].CEP[1] + "."
+                        + lista_ceps[i].CEP[2] + lista_ceps[i].CEP[3] + lista_ceps[i].CEP[4] + "-"
+                        + lista_ceps[i].CEP[5] + lista_ceps[i].CEP[6] + lista_ceps[i].CEP[7];
+
+                        document.getElementById("tabela_ceps").innerHTML += "<p>" + cep_formatado + "</p>";
+
+                    }
+
+                }
+
+            });
+
+        break;
+
+    }
 
 }
 

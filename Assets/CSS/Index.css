@@ -70,7 +70,7 @@ body {
     justify-content: flex-start;
     margin-top: 15px;
     background-color: transparent;
-    padding: 3%;
+    padding: 10px;
     overflow-y: auto;
 
 }
@@ -88,7 +88,7 @@ body {
     font-size: medium;
     border-radius: 10px;
     margin: 10px 0px 10px 0px;
-    padding: 15px;
+    padding: 35px;
 
 }
 
