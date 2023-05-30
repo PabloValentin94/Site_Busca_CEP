@@ -44,7 +44,7 @@ body
 #titulo_inscricao_cep label {
 
     font-size: 25px;
-    width: 100%;
+    width: 90%;
     text-align: center;
 
 }
@@ -52,7 +52,7 @@ body
 #inscricao_cep input {
 
     height: 100%;
-    width: 100%;
+    width: 90%;
     font-size: 20px;
     border-radius: 10px;
     text-align: center;

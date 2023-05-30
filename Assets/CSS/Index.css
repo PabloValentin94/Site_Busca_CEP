@@ -77,7 +77,7 @@ body {
 
 .botao_menu_lateral {
 
-    height: 15%;
+    height: 30%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -88,7 +88,7 @@ body {
     font-size: medium;
     border-radius: 10px;
     margin: 10px 0px 10px 0px;
-    padding: 35px;
+    padding: 40px;
 
 }
 
