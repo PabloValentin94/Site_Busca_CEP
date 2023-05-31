@@ -14,7 +14,7 @@ function Associar_Pagina_Externa(indice_pagina)
     {
 
         case 0:
-            document.getElementById("frame_pagina_externa").src = "";
+            document.getElementById("frame_pagina_externa").src = "Inicio.html";
         break;
 
         case 1:
